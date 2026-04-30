@@ -1,160 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-
-    <title>Web Apps Developer (Beta :D) </title>
-    <link rel="shortcut icon" href="pavicon.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <style type="text/css">
-    </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        window.alert = function() {};
-        var defaultCSS = document.getElementById('bootstrap-css');
-
-        function changeCSS(css) {
-            if (css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="' + css + '" type="text/css" />');
-            else $('head > link').filter(':first').replaceWith(defaultCSS);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herianto Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
         }
-        $(document).ready(function() {
-            var iframe_height = parseInt($('html').height());
-            window.parent.postMessage(iframe_height, 'https://bootsnipp.com');
-        });
-    </script>
+        .active-nav { 
+            color: #2563eb; 
+            background-color: #eff6ff;
+            border-radius: 1rem;
+        }
+        ::-webkit-scrollbar { display: none; }
+        html { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .mobile-nav-fix {
+            left: 50% !important;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 448px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
+<body class="min-h-screen flex justify-center selection:bg-blue-100 selection:text-blue-700">
 
-<body>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <br>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="">
-                    <header class="bg-white">
-                        <div class="">
-                            <img src="ava.png" class="card-img-top rounded" alt="">
-                        </div>
-                        <div>
-                            <p class="category"></p>
+    <div class="w-full max-w-md bg-white min-h-screen shadow-[0_0_50px_rgba(0,0,0,0.05)] relative pb-28 border-x border-slate-100">
+        
+        <!-- Header -->
+        <header id="home" class="p-8 pt-14 bg-gradient-to-b from-blue-50/50 to-white text-center">
+            <div class="relative inline-block group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <img src="img/tihi.webp" alt="Herianto" class="relative w-24 h-24 rounded-3xl object-cover shadow-xl border-4 border-white mb-4">
+            </div>
+            
+            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Herianto</h1>
+            <p class="text-blue-600 font-bold text-xs mt-1 px-4 py-1.5 bg-blue-50 rounded-full inline-block">
+                (Bukan 😂) Fullstack Web Apps Developer
+            </p>
+            
+            <div class="flex justify-center gap-5 mt-6">
+                <a href="https://github.com/harryandjune" class="text-slate-400 hover:text-slate-900 transition-colors text-xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:muslimhid@gmail.com" class="text-slate-400 hover:text-blue-600 transition-colors text-xl">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </header>
 
-                            <!-- Nav tabs -->
-                            <div class="card">
+        <main class="px-6 space-y-10">
+            <!-- Tentang -->
+            <section id="about">
+                <h2 class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-4 ml-1">Tentang</h2>
+                <div class="bg-slate-50/80 border border-slate-100 p-6 rounded-[2rem] text-slate-700 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-blue-100/30 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+                    <p class="text-[13px] leading-relaxed relative z-10">
+                        Belajar ngoding untuk membantu mengembangkan aplikasi web kampus (stishid.ac.id). 
+                    </p>
+                </div>
+            </section>
 
-                                <div class="card-header">
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#about" role="tab">
-                                                <i class="now-ui-icons objects_umbrella-13"></i>About
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                                                <i class="now-ui-icons shopping_cart-simple"></i> Contact</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#skill" role="tab">
-                                                <i class="now-ui-icons shopping_shop"></i> Skill
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
-                                                <i class="now-ui-icons ui-2_settings-90"></i>Project
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="about" role="tabpanel">
-                                            <h5>Tentang</h5>
-                                            <p>Dosen yang punya hobi ngoding. Belajarnya otodidak. Tujuan belajar programing untuk bantu kampus</p>
-                                            <hr>
-                                            <h5>Pentingnya Belajar Programing</h5>
-                                            <p> memberikan kemampuan untuk memahami dan mengoperasikan teknologi dalam dunia yang semakin tergantung pada sistem komputer dan perangkat lunak. Selain itu, pemrograman juga melatih keterampilan pemecahan masalah dan logika yang berguna dalam berbagai bidang pekerjaan</p>
-                                            <hr>
-                                            <h5>Alasan belajar PHP</h5>
-                                            <p> Bahasa Pemprograman PHP popularitasnya tinggi sebagai bahasa pemrograman web, yang mendukung pengembangan situs web dinamis dengan mudah dan memiliki banyak sumber daya dan komunitas dukungan yang luas. Selain itu, PHP juga kompatibel dengan berbagai platform dan memiliki banyak framework yang dapat mempercepat proses pengembangan.</p>
-
-
-
-                                        </div>
-                                        <div class="tab-pane" id="profile" role="tabpanel">
-                                            <p>Herianto</p>
-                                            <hr>
-                                            <p> </p>
-                                            <hr>
-                                            <p>muslimhid@gmail.com</p>
-                                            <hr>
-                                            <button type="button" class="btn btn-success"><a href="https://api.whatsapp.com/send/?phone=62895413075300" role="button"><i class="fab fa-whatsapp" style="color: white;"></i></a></button>
-                                            <hr>
-
-
-
-                                        </div>
-                                        <div class="tab-pane" id="skill" role="tabpanel">
-                                            <p>Jangan percaya, ini skil amatiran &#128513;</p>
-                                            <div class="progress mx-auto">
-                                                <div class="progress-bar bg-success text-left pl-2" role="progressbar" style="width: 92%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">HTML 92 %</div>
-                                            </div>
-                                            <br>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-info text-left pl-2" role="progressbar" style="width: 89%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">CSS 89 %</div>
-                                            </div>
-                                            <br>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-warning text-left pl-2" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">PHP 90 %</div>
-                                            </div>
-                                            <br>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-danger text-left pl-2" role="progressbar" style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">MySQL : 80 %</div>
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane" id="settings" role="tabpanel">
-                                            <p> <a href="https://herianto.tech/zakat/application/ ">Zakatku</a> </p>
-                                            <hr>
-                                            <p> <a href="https://herianto.tech/skripsi">Research Cost Counter</a> </p>
-                                            <hr>
-                                            <p> <a href="https://marmputri.sch.id/">Portal Madrasah Aliah RM Putri </a> </p>
-                                            <hr>
-                                            <p> <a href="https://stishid.ac.id/">Portal STIS Hidayatullah Balikpapan </a> </p>
-                                            <hr>
-                                            <p> <a href="https://e-journal.stishid.ac.id/">Jurnal STIS Hidayatullah</a> </p>
-                                            <hr>
-                                            <p> <a href="http://repository.stishid.ac.id/">Repository STIS Hidayatullah Balikpapan</a> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </header>
-                    <div class="card-body m-2 d-flex justify-content-center">
-                        <a class="btn btn-primary ml-2" style="" href="https://www.facebook.com/jenderal.moslem/" role="button"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-primary ml-2" style="" href="https://twitter.com/heri_jameel" role="button"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-primary ml-2" style="" href="https://www.youtube.com/channel/UCsEjtoAA3461IRJXlkPfVnA" role="button"><i class="fab fa-youtube"></i></a>
+            <!-- Skill -->
+            <section id="skills">
+                <h2 class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-4 ml-1">Skill</h2>
+                <div class="grid grid-cols-4 gap-3">
+                    <!-- HTML -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fab fa-html5 text-xl text-orange-500 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">HTML</p>
+                    </div>
+                    <!-- CSS -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fab fa-css3-alt text-xl text-blue-500 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">CSS</p>
+                    </div>
+                    <!-- JS -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fab fa-js text-xl text-yellow-500 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">JS</p>
+                    </div>
+                    <!-- PHP -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fab fa-php text-xl text-indigo-500 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">PHP</p>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fas fa-database text-xl text-blue-400 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">MySQL</p>
+                    </div>
+                    <!-- jQuery -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fas fa-code text-xl text-cyan-600 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">jQuery</p>
+                    </div>
+                    <!-- Bootstrap -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fab fa-bootstrap text-xl text-purple-600 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">Bootstrap</p>
+                    </div>
+                    <!-- Apache -->
+                    <div class="skill-card bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transition-all text-center">
+                        <i class="fas fa-server text-xl text-red-500 mb-1"></i>
+                        <p class="text-[9px] font-extrabold text-slate-600">Apache</p>
                     </div>
                 </div>
+            </section>
 
-            </div> <!-- card.// -->
-        </div> <!-- col.//-->
+            <!-- Proyek -->
+            <section id="projects" class="pb-10">
+                <h2 class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 mb-4 ml-1">Proyek</h2>
+                <div class="space-y-4">
+                    
+                    <a href="#" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">Pintuwkp</h3>
+                            <p class="text-[11px] text-slate-500">Sistem informasi yayasan ponpes</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
 
-    </div> <!-- row.//-->
+                    <a href="#" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">SDI YPPH</h3>
+                            <p class="text-[11px] text-slate-500">Sistem informasi sumber daya insani</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
 
+                    <a href="#" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">Simdakwah</h3>
+                            <p class="text-[11px] text-slate-500">Manajemen penjadwalan dai</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
 
-    </div>
-    <!--container end.//-->
+                    <a href="https://herianto.tech/zakat/application/" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">Zakatku</h3>
+                            <p class="text-[11px] text-slate-500">Kalkulator zakat</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
 
+                    <a href="https://herianto.tech/skripsi" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">Cost Counter</h3>
+                            <p class="text-[11px] text-slate-500">Estimasi biaya penelitian</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
 
-    <script type="text/javascript">
-    </script>
+                    <a href="https://stishid.ac.id/" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">Portal STIS</h3>
+                            <p class="text-[11px] text-slate-500">Website resmi kampus</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/harryandjune" class="group flex items-center gap-4 bg-white p-4 rounded-[1.5rem] border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all active:scale-[0.98]">
+                        <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-700 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-slate-800">harryandjune.github.io</h3>
+                            <p class="text-[11px] text-slate-500">Halaman portofolio</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 text-slate-300 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Navbar -->
+        <nav class="fixed bottom-0 z-50 bg-white/80 backdrop-blur-xl border-t border-slate-100 px-6 py-4 mobile-nav-fix">
+            <div class="flex justify-between items-center w-full">
+                <a href="#home" class="p-2 flex flex-col items-center gap-1 active-nav px-4">
+                    <i class="bi bi-house-door-fill text-lg"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-wider">Beranda</span>
+                </a>
+                <a href="#about" class="p-2 flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 transition-colors px-4">
+                    <i class="bi bi-person text-lg"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-wider">Tentang</span>
+                </a>
+                <a href="#skills" class="p-2 flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 transition-colors px-4">
+                    <i class="bi bi-code-slash text-lg"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-wider">Skill</span>
+                </a>
+                <a href="#projects" class="p-2 flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 transition-colors px-4">
+                    <i class="bi bi-grid text-lg"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-wider">Proyek</span>
+                </a>
+                <a href="mailto:muslimhid@gmail.com" class="p-2 flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 transition-colors px-4">
+                    <i class="bi bi-send text-lg"></i>
+                    <span class="text-[9px] font-bold uppercase tracking-wider">Kontak</span>
+                </a>
+            </div>
+        </nav>
+
+    </div> 
 </body>
-
 </html>
